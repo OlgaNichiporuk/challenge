@@ -6,10 +6,16 @@ generator client {
 datasource db {
   // NOTE: You probably want to change this to another database later on
   provider = "mongodb"
-  url      = mongodb://localhost:27017/challenge
+  url      = env("DATABASE_URL")
 }
-model Example {
-  id          String @id @default(uuid())
-  description String
-  details     String
+model questions {
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId
+  question    String
+}
+
+model Answers {
+    id          String    @id @default(auto()) @map("_id") @db.ObjectId
+    answer      String
+    question    String    @db.ObjectId
+    correct     Boolean
 }

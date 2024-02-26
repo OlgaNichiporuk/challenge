@@ -1,8 +1,11 @@
 <script lang="ts">
 import TheGame from './components/TheGame.vue';
+const { data } = await useFetch('/api/index')
+
+console.log(data);
 
 
-const data = {
+const test = {
   question:'В скольких номинациях получил «Оскара» фильм «Титаник»?',
   answer_1: '11',
   answer_2: '10',
@@ -13,7 +16,7 @@ export default {
   components: {
     TheGame
   },
-  data: () => (data)
+  data: () => (test)
 }
 </script>
 
