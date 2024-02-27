@@ -1,15 +1,10 @@
-<script setup>
-function test() {
-    document.querySelectorAll('.hello').forEach(element => {
-        element.style.display = 'none';
-    });
-    document.querySelector('.container').style.display = 'flex';
-    
-}
-
-</script>
 <template>
+     <NuxtLink to="/game" class="mt-4 text-blue-500">
         <button class="hello" id="button" @click="test">Старт</button>
+    </NuxtLink>
+    <NuxtLink to="/admin" class="mt-4 text-blue-500">
+        создать вопросы
+    </NuxtLink>
 </template>
   
 
